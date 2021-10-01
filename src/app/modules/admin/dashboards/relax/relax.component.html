@@ -1,0 +1,103 @@
+<div class="bg-gray-100 w-full text-blue-900 text-2xl">
+    <!-- <h2>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorem
+        consequatur, at nobis minima voluptas omnis sit quae consequuntur quis,
+        sunt vitae corporis voluptate provident sequi totam. Voluptatibus maxime
+        fugiat earum?
+    </h2> -->
+    <!-- <h1>{{ nomi }}</h1> -->
+    <!-- <project></project> -->
+    <!-- <app-enjoy>
+        <h2>salom hammaga</h2>
+        <p class="file">wassup bro</p>
+    </app-enjoy> -->
+    <!-- <button mat-fab-button color="warn" (click)="openDialog()">
+        Open dialog
+    </button> -->
+    <!-- <img
+        class="w-16 md:w-64 lg:w-120"
+        src="../../../../../assets/images/avatars/female-01.jpg"
+        alt=""
+    /> -->
+    <b>{{ name }}</b>
+
+    <div class="bg-green-200 mx-auto w-1/2 rounded p-5">
+        <div class="text-center"><h1>Xususiyatlari:</h1></div>
+        <ul class="p-4" style="list-style-type: disc">
+            <li>
+                Mashina: <b> {{ name }} </b>
+            </li>
+            <li>
+                Tezlik: <b> {{ speed }}</b>
+            </li>
+            <li>
+                Madel: <b>{{ model }}</b>
+            </li>
+            <li class="flex items-center mr-2">
+                Rangi:
+                <pre
+                    class="w-6 h-6 rounded-full"
+                    [ngStyle]="{ backgroundColor: colors.car }"
+                ></pre>
+            </li>
+        </ul>
+    </div>
+
+    <div class="bg-gray-200 mx-auto w-1/2 rounded p-5 mt-5">
+        <form class="block" (submit)="addOpt(option1.value)">
+            <label for="option">AddOption</label>
+            <br />
+            <input
+                class="border border-black px-4 py-2 my-3"
+                type="text"
+                id="test"
+                placeholder="add"
+                #option1
+            />
+            <br />
+            <button
+                type="submit"
+                class="bg-green-500 text-white px-4 py-1 border rounded"
+            >
+                addition
+            </button>
+        </form>
+    </div>
+    <div class="p-5 bg-yellow-200 border rounded w-1/2 mx-auto my-10">
+        <div><h1 class="text-center">Option</h1></div>
+        <ul class="p-4" style="list-style-type: disc">
+            <li *ngFor="let option of options">
+                {{ option }}
+                <button
+                    (click)="delete(option)"
+                    class="px-2 bg-red-600 text-white border rounded ml-2"
+                >
+                    x
+                </button>
+            </li>
+        </ul>
+    </div>
+    <div class="my-5 w-1/2 mx-auto">
+        <div><h1>Tanlov</h1></div>
+        <div class="flex-row">
+            <button
+                class="rounded mx-3 px-4 py-1 text-white bg-red-400 border"
+                (click)="bmwSelect('bmw')"
+            >
+                BMW
+            </button>
+            <button
+                class="rounded mx-3 px-4 py-1 text-white bg-yellow-400 border"
+                (click)="bmwSelect('audi')"
+            >
+                Audi
+            </button>
+            <button
+                class="rounded mx-3 px-4 py-1 text-white bg-green-400 border"
+                (click)="bmwSelect('mers')"
+            >
+                Mers
+            </button>
+        </div>
+    </div>
+</div>

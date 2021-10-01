@@ -1,0 +1,109 @@
+<div class="w-full text-black">
+    <div class="w-1/5 mx-auto">
+        <button
+            mat-button
+            (click)="addUser()"
+            class="bg-blue-900 w-full text-white px-2 py-1 mt-5 border rounded"
+        >
+            +add
+        </button>
+    </div>
+    <div>
+        <p class="text-xl font-bold ml-5">Length:{{ listUsers.length }}</p>
+    </div>
+    <div class="flex justify-between">
+        <div class="w-1/2 mx-5" style="height: 490px; overflow-y: auto">
+            <table class="table" style="width: 100%">
+                <tr>
+                    <!-- <th>N_</th> -->
+                    <th>Users list</th>
+                </tr>
+                <tr
+                    class="bg-gray-200 hover:bg-gray-300 cursor-pointer"
+                    *ngFor="let user of listUsers; let i = index"
+                >
+                    <!-- <td>{{ i + 1 }}</td> -->
+                    <td (click)="showInfo(user.id)">
+                        Raqam:
+                        <b class="bg-yellow-100 px-1">{{ user.id }}</b> | Vaqti:
+                        <b class="bg-red-200 px-1">{{ user.date }}</b>
+                        <p class="flex items-center p-1">
+                            <mat-icon>account_circle</mat-icon>
+                            Mijoz:
+                            <b>{{ user.name }}</b>
+                        </p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="w-1/2 mx-5">
+            <div
+                class="border-gray-300 border p-3"
+                style="width: 100%; height: 100%"
+            >
+                <div *ngIf="person; else ShowEmpty">
+                    <table style="width: 100%">
+                        <tr>
+                            <th class="py-4">User name</th>
+                            <td>{{ person.name }}</td>
+                        </tr>
+                        <tr>
+                            <th class="py-4">Email</th>
+                            <td>{{ person.email }}</td>
+                        </tr>
+                        <tr>
+                            <th class="py-4">Birthday</th>
+                            <td>{{ person.birth }}</td>
+                        </tr>
+                        <tr>
+                            <th class="py-4">Country</th>
+                            <td>{{ person.country }}</td>
+                        </tr>
+                        <tr>
+                            <th class="py-4">Update</th>
+                            <td>
+                                <button
+                                    (click)="openUpdate(person.id)"
+                                    class="text-green-600 text-white px-3"
+                                >
+                                    <mat-icon
+                                        class="text-blue-600"
+                                        aria-hidden="false"
+                                        aria-label="Example home icon"
+                                        >create</mat-icon
+                                    >
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="py-4">Delete</th>
+                            <td>
+                                <button
+                                    (click)="openDelete(person.id)"
+                                    class="text-red-600 text-white px-3"
+                                >
+                                    <mat-icon
+                                        class="text-red-600"
+                                        aria-hidden="false"
+                                        aria-label="Example home icon"
+                                        >delete</mat-icon
+                                    >
+                                </button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <ng-template #ShowEmpty>
+                    <div class="icons">
+                        <mat-icon>highlight_off</mat-icon>
+                    </div>
+                    <div class="text-gray-500 text-xl text-center">
+                        To'liq ma'lumotni ko'rish uchun ro'yxatdan tanlang
+                    </div>
+                </ng-template>
+
+                <!-- </ng-template> -->
+            </div>
+        </div>
+    </div>
+</div>

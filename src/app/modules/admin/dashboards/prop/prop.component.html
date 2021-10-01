@@ -1,0 +1,271 @@
+<div class="lg:flex lg:justify-center block space-y-4">
+    <div class="block lg:w-2/3 w-full">
+        <div class="w-full py-4">
+            <div class="rounded h-2/3 mx-2 p-3">
+                <div class="flex justify-between">
+                    <div>
+                        <b
+                            >Questions No: {{ questions.id }} /
+                            {{ listTest.length }}</b
+                        >
+                    </div>
+                    <div>
+                        <b>{{ formatedMin }}:{{ formatedSec }}</b>
+                    </div>
+                </div>
+                <hr class="mt-3 mb-10" />
+                <!-- <div>
+                    <ul>
+                        <li *ngFor="let item of slideItems; let i = index">
+                            <img
+                                *ngIf="i === counter"
+                                [src]="slideItems[i].src"
+                                @fade
+                            />
+                        </li>
+                    </ul>
+                </div> -->
+                <div>
+                    <ul>
+                        <li *ngFor="let quizId of listTest; let i = index">
+                            <div *ngIf="i === counter">
+                                <b
+                                    style="font-family: sans-serif"
+                                    class="
+                                        py-5
+                                        text-2xl
+                                        font-black
+                                        text-blue-500
+                                        font-medium
+                                        text
+                                    "
+                                >
+                                    {{ questions.question }}
+                                </b>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div
+                    class="space-y-8 overflow-auto h-80"
+                    *ngIf="questions"
+                    @fade
+                >
+                    <b
+                        style="font-family: sans-serif"
+                        class="
+                            py-5
+                            text-2xl
+                            font-black
+                            text-blue-500
+                            font-medium
+                            text
+                        "
+                    >
+                        {{ questions.question }}
+                    </b>
+                    <br />
+
+                    <mat-selection-list class="space-y-6" #shoes>
+                        <div
+                            *ngFor="let ques of questions.answer; let i = index"
+                        >
+                            <label
+                                style="font-family: sans-serif"
+                                class="inline-flex items-center text-xl"
+                            >
+                                <mat-radio-button
+                                    class="ml-3 mr-1"
+                                    type="radio"
+                                    [id]="ques"
+                                    name="category"
+                                    [value]="ques"
+                                    (change)="toggleClass(i, questions.id)"
+                                    [checked]="inputCheck"
+                                    color="primary"
+                                >
+                                </mat-radio-button>
+                                {{ ques }}
+                            </label>
+                        </div>
+                    </mat-selection-list>
+                </div>
+                <!-- <div *ngFor="let ques of questions.answer; let i = index"> -->
+                <!-- <label class="inline-flex items-center">
+                        <input
+                            class="checkControl form-radio"
+                            type="radio"
+                            [id]="ques"
+                            name="category"
+                            [value]="ques"
+                            (change)="toggleClass(i)"
+                            [checked]="inputCheck"
+                        />
+                        <span class="ml-2 text-xl">{{ ques }}</span>
+                    </label> -->
+
+                <!-- <input
+                        class="checkControl hidden"
+                        type="radio"
+                        [id]="ques"
+                        name="category"
+                        [value]="ques"
+                        (change)="toggleClass(i)"
+                        [checked]="inputCheck"
+                    />
+                    <label [for]="ques" class="text-xl"> </label> -->
+                <!-- <div
+                    class="flex items-center mr-4 mb-4"
+                    *ngFor="let ques of questions.answear; let i = index"
+                >
+                    <input
+                        [(ngModel)]="selected[i]"
+                        [checked]="selected[i]"
+                        [value]="ques.id"
+                        [id]="ques.id"
+                        type="radio"
+                        name="quiz"
+                        class="hidden"
+                    />
+                    <label [for]="ques.id" class="text-xl">
+                        <span
+                            class="
+                                w-4
+                                h-4
+                                ml-2
+                                mr-1
+                                inline-block
+                                rounded-full
+                                border border-gray-600
+                            "
+                        ></span>
+                        {{ ques.text }}</label
+                    >
+                </div> -->
+
+                <!-- <div *ngFor="let ques of question.options">
+                    <input
+                    [(ngModel)]="options[question.id]"
+                    [checked]="options[question.id]"
+                    value="{{ question.id }}-{{ option.id }}"
+                    type="radio"
+                    name="option{{ question.id }}"
+                /> 
+                    <input type="radio" value="{{option.id}}" name="{{question.id}}" ngModel >
+                    //This way it works fine but I need to use [(ngModel)] to
+                    submit the form
+                    {{ option.title }}
+                </div>
+                
+             <div class="space-y-4">
+                    <div *ngFor="let ques of questions.answear">
+                        <input
+                            type="radio"
+                            [id]="ques.id"
+                            name="quiz"
+                            [value]="ques.id"
+                            [(ngModel)]="selected[ques.id - 1]"
+                           
+                        />
+                        <label [for]="ques.id" class="text-xl">
+                            {{ ques.text }}</label
+                        >
+                    </div>
+                </div> -->
+            </div>
+            <br />
+            <div class="flex items-center justify-between mx-6 mt-12">
+                <!-- *ngIf="!isBackButtonDisabled(); showBtn" -->
+                <div class="mx-2">
+                    <ng-template #showBtn> </ng-template>
+                    <button
+                        *ngIf="backShow; showBtn"
+                        (click)="back()"
+                        class="
+                            flex
+                            items-center
+                            justify-center
+                            bg-blue-500
+                            dark:bg-white dark:text-black
+                            hover:bg-blue-800
+                            text-white text-xl
+                            rounded-full
+                            py-2
+                            px-6
+                        "
+                    >
+                        <mat-icon class="text-white dark:text-black"
+                            >keyboard_arrow_left</mat-icon
+                        >
+                        Back
+                    </button>
+                </div>
+                <!-- *ngIf="!isNextButtonDisabled(); showBtn" -->
+                <div class="mx-2">
+                    <button
+                        (click)="next()"
+                        class="
+                            flex
+                            items-center
+                            justify-center
+                            bg-blue-500
+                            dark:bg-white dark:text-black
+                            hover:bg-blue-800
+                            text-white text-xl
+                            rounded-full
+                            py-2
+                            px-6
+                        "
+                    >
+                        {{ buttonTitle }}
+                        <mat-icon
+                            *ngIf="iconShow"
+                            class="text-white dark:text-black"
+                            >keyboard_arrow_right</mat-icon
+                        >
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="max-width: 300px">
+        <div class="w-3/4 mx-auto px-1 py-4 border">
+            <div class="mb-1">
+                <b class="text-xl font-bold answer">Answers</b>
+            </div>
+            <hr class="my-2" />
+            <div>
+                <ul>
+                    <li class="inline-block">
+                        <button
+                            *ngFor="let test of listTest"
+                            class="clickBtn"
+                            (click)="slideShow(test.id)"
+                            id="addStyle{{ test.id }}"
+                        >
+                            {{ test.id }}
+                        </button>
+                    </li>
+                </ul>
+            </div>
+            <hr class="my-2" />
+            <div>
+                <button
+                    (click)="openDialog()"
+                    class="
+                        w-full
+                        text-xl
+                        py-2
+                        rounded-full
+                        text-white text-center
+                        bg-blue-500
+                        hover:bg-blue-800
+                    "
+                >
+                    Finish
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

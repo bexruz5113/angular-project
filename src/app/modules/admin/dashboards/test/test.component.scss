@@ -1,0 +1,132 @@
+@import "swiper/scss";
+@import "swiper/scss/navigation";
+@import "swiper/scss/pagination";
+
+body {
+    position: relative;
+}
+
+input[type="radio"] + label span {
+    transition: 0.2s, transform 0.2s;
+}
+
+input[type="radio"] + label span:hover,
+input[type="radio"] + label:hover span {
+    transform: scale(1.2);
+}
+
+input[type="radio"]:checked + label span {
+    background-color: rgb(27, 28, 31);
+    color: white;
+    box-shadow: 0px 0px 0px 1px white inset;
+}
+
+input[type="radio"]:checked + label {
+    font-weight: 500; //text-blue
+}
+.clickBtn {
+    width: 26px;
+    height: 26px;
+    border-radius: 10%;
+    margin: 5px;
+    background: lightgrey;
+    color: black;
+    font-size: 11px;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+.checked {
+    background-color: blue;
+    color: white;
+    animation: selected 1.5s forwards;
+}
+
+@keyframes selected {
+    from {
+        opacity: 0.1;
+    }
+    to {
+        opacity: 2;
+    }
+}
+.slide {
+    animation: slide 2s forwards;
+}
+
+.custom-slider-main {
+    display: flex;
+    overflow: hidden;
+    scroll-behavior: smooth;
+}
+
+.info-box {
+    width: 100%;
+    height: 500px;
+}
+// .paginationStyle {
+//     display: flex;
+//     justify-content: space-around;
+// }
+
+// // swiperdagi pagination qanchonki test belgilansa owa boyalib turishi kerak
+// .customPagination
+//     .ngx-pagination
+//     .current
+//     .pagination-previous
+//     .ng-star-inserted {
+//     width: 56px;
+//     height: 56px;
+//     border-radius: 10% !important;
+//     margin: 5px;
+//     background: lightgrey;
+//     color: black;
+//     font-size: 11px;
+//     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+// }
+// .ngx-pagination a,
+// .ngx-pagination button {
+//     color: #0a0a0a;
+
+//     padding: 20px;
+//     border-radius: 0;
+//     background-color: red;
+// }
+// .ngx-pagination
+//     .ng-star-inserted
+//     .pagination-previous
+//     .disabled
+//     .ng-star-inserted {
+//     background-color: yellow;
+// }
+
+// .ng-star-inserted .show-for-sr {
+//     background-color: yellow;
+// }
+.custom-pagination .paginator-nav-btns {
+    margin: 0px 15px;
+    font-weight: normal;
+}
+
+.custom-pagination > div.current {
+    border: 2px solid black;
+    color: black;
+    font-weight: lighter;
+}
+
+.custom-pagination > div {
+    border: 1px solid gray;
+    background-color: #f1f5f9;
+    padding: 0 8px;
+    margin: 0 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    flex: 1;
+    font-size: 15px;
+    text-align: center;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.custom-pagination {
+    display: flex;
+    max-width: 600px;
+    margin: auto;
+}

@@ -1,0 +1,298 @@
+{
+  "posts": [
+    {
+      "name": "ТУРОБОВА ЗИЛОЛА ЗОКИРОВНА",
+      "email": "ТУРОБОВА@gmail.com",
+      "birth": "2016-01-06",
+      "country": "Samarqand",
+      "id": 3,
+      "date": "18:02"
+    },
+    {
+      "name": " UMAROV DAVRON SHAVKATOVICH ",
+      "email": "davron@gmail.com",
+      "birth": "2021-08-31",
+      "country": "Sirdaryo",
+      "id": 4,
+      "date": "09:30"
+    },
+    {
+      "name": " UMAROV DAVRON SHAVKATOVICH ",
+      "email": "bexruzbahronov2000@gmail.com",
+      "birth": "2021-09-03",
+      "country": "Navoiy",
+      "id": 6,
+      "date": "10:46"
+    },
+    {
+      "name": "ТУРОБОВА ЗИЛОЛА ЗОКИРОВНА",
+      "email": "bexruz5113@gmail.com",
+      "birth": "2021-09-02",
+      "country": "Toshkent",
+      "id": 8,
+      "date": "12:12"
+    },
+    {
+      "name": "НИЯЗМЕТОВ АНВАР НУРАДДИНОВИЧ",
+      "email": "baxromovferuz9933@gmail.com",
+      "birth": "2021-08-30",
+      "country": "Xorazm",
+      "id": 9,
+      "date": "11:32"
+    },
+    {
+      "name": "НИЯЗМЕТОВ АНВАР НУРАДДИНОВИЧ",
+      "email": "bexruzbahronov2000@gmail.com",
+      "birth": "2021-09-05",
+      "country": "Navoiy",
+      "id": 10,
+      "date": "15:22"
+    },
+    {
+      "name": "НИЯЗМЕТОВ АНВАР НУРАДДИНОВИЧ",
+      "email": "bexruzbahronov2000@gmail.com",
+      "birth": "2021-09-03",
+      "country": "Navoiy",
+      "date": "17:47",
+      "id": 12
+    },
+    {
+      "name": "Bexruz Baxronov",
+      "email": "bexruzbahronov2000@gmail.com",
+      "birth": "2021-09-03",
+      "country": "Xorazm",
+      "date": "21:05",
+      "id": 13
+    },
+    {
+      "name": "НИЯЗМЕТОВ АНВАР НУРАДДИНОВИЧ",
+      "email": "baxromovferuz9933@gmail.com",
+      "birth": "2021-09-03",
+      "country": "Xorazm",
+      "date": "16:00",
+      "id": 14
+    }
+  ],
+  "question": [
+    {
+      "id": 1,
+      "question": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus optio delectus numquam sint saepe corporis",
+      "answer": [
+        "consectetur adipisicing elit. Repellendus optio delectus",
+        "Lorem ipsum dolo amet, consectetur elit. Repellendus optio delectus",
+        "Lorem ipsum dolor sitonsectetur adipisicing elit. Repellendus optio delectus",
+        "Lorem ipsum dolor sit amet, consecteRepellendus optio delectus"
+      ],
+      "right_answer": 4
+    },
+    {
+      "id": 2,
+      "question": "Lorem ipsum dolor sit cing elit. met, consectetur adipisicing elit. Repellendus optio delectus numquam sint saepe corporis",
+      "answer": [
+        " , consectetur adipisi epellendus optio delectus",
+        "Lorem ipsum dolo amet, consectetur elit. Repellendus optio delectus",
+        "Lorem ipsum dolor sitonsectetur adipisicing elit. Repellendus optio delectus",
+        "Lorem ipsum dolor sit amet, consecteRepellendus optio delectus"
+      ],
+      "right_answer": 4
+    },
+    {
+      "id": 3,
+      "question": " ipsum dolor sit amet, consectetur adipisicintio delectus numquam sint saepe corporis.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus optio delectus numquam sint saepe corporis",
+      "answer": [
+        "Lorem ipsum dolor sit , consectetur adipisicing elit optio delectus",
+        "tetur . Repellendus optio delectus",
+        "Lorem ipsum dolor sitonsectetur adipisicing elit. Repellendus optio delectus",
+        "Lorem ipsum dolor sit amet, consecndus optio delectus"
+      ],
+      "right_answer": 4
+    },
+    {
+      "id": 4,
+      "question": "Losectetur adipisicing elit. Repellendus optio delectus numquam sint saepe corporis.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus optio delectus numquam sint saepe corporis",
+      "answer": [
+        "Lorem ipsum dolo elit. Repellendus optio delectus",
+        "Lorem ipsum epellendus optio delectus",
+        "Lorem ipsum dolor sitonsectetur adRepellendus optio delectus",
+        "Lorem ipst, consecteRepellendus optio delectus"
+      ],
+      "right_answer": 4
+    },
+    {
+      "id": 5,
+      "question": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus optio delectus numquam sint saepe corporis.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus optio delectus numquam sint saepe corporis",
+      "answer": [
+        "Lorem ipsum dolor sit , consectetur adipisicing elit. Repellendus optio delectus",
+        "Lorem ipsum dolo amet, consectetur elit. Repellendus optio delectus",
+        "Lorem ipsum dolor sitonsectetur adipisicing elit. Repellendus optio delectus",
+        "Lorem ipsum dolor sit amet, consecteRepellendus optio delectus"
+      ],
+      "right_answer": 4
+    },
+    {
+      "id": 6,
+      "question": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus optio delectus numquam sint saepe corporis.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus optio delectus numquam sint saepe corporis",
+      "answer": [
+        "Lorem ipsum dolor sit , consectetur adipisicing elit. Repellendus optio delectus",
+        "Lorem ipsum dolo amet, consectetur elit. Repellendus optio delectus",
+        "Lorem ipsum dolor sitonsectetur adipisicing elit. Repellendus optio delectus",
+        "Lorem ipsum dolor sit amet, consecteRepellendus optio delectus"
+      ],
+      "right_answer": 4
+    },
+    {
+      "id": 7,
+      "question": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus optio delectus numquam sint saepe corporis.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus optio delectus numquam sint saepe corporis",
+      "answer": [
+        "Lorem ipsum dolor sit , consectetur adipisicing elit. Repellendus optio delectus",
+        "Lorem ipsum dolo amet, consectetur elit. Repellendus optio delectus",
+        "Lorem ipsum dolor sitonsectetur adipisicing elit. Repellendus optio delectus",
+        "Lorem ipsum dolor sit amet, consecteRepellendus optio delectus"
+      ],
+      "right_answer": 4
+    },
+    {
+      "id": 8,
+      "question": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus optio delectus numquam sint saepe corporis.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus optio delectus numquam sint saepe corporis",
+      "answer": [
+        "Lorem ipsum dolor sit , consectetur adipisicing elit. Repellendus optio delectus",
+        "Lorem ipsum dolo amet, consectetur elit. Repellendus optio delectus",
+        "Lorem ipsum dolor sitonsectetur adipisicing elit. Repellendus optio delectus",
+        "Lorem ipsum dolor sit amet, consecteRepellendus optio delectus"
+      ],
+      "right_answer": 4
+    },
+    {
+      "id": 9,
+      "question": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus optio delectus numquam sint saepe corporis.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus optio delectus numquam sint saepe corporis",
+      "answer": [
+        "Lorem ipsum dolor sit , consectetur adipisicing elit. Repellendus optio delectus",
+        "Lorem ipsum dolo amet, consectetur elit. Repellendus optio delectus",
+        "Lorem ipsum dolor sitonsectetur adipisicing elit. Repellendus optio delectus",
+        "Lorem ipsum dolor sit amet, consecteRepellendus optio delectus"
+      ],
+      "right_answer": 4
+    },
+    {
+      "id": 10,
+      "question": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus optio delectus numquam sint saepe corporis.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus optio delectus numquam sint saepe corporis",
+      "answer": [
+        "Lorem ipsum dolor sit , consectetur adipisicing elit. Repellendus optio delectus",
+        "Lorem ipsum dolo amet, consectetur elit. Repellendus optio delectus",
+        "Lorem ipsum dolor sitonsectetur adipisicing elit. Repellendus optio delectus",
+        "Lorem ipsum dolor sit amet, consecteRepellendus optio delectus"
+      ],
+      "right_answer": 4
+    },
+    {
+      "id": 11,
+      "question": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus optio delectus numquam sint saepe corporis",
+      "answer": [
+        "consectetur adipisicing elit. Repellendus optio delectus",
+        "Lorem ipsum dolo amet, consectetur elit. Repellendus optio delectus",
+        "Lorem ipsum dolor sitonsectetur adipisicing elit. Repellendus optio delectus",
+        "Lorem ipsum dolor sit amet, consecteRepellendus optio delectus"
+      ],
+      "right_answer": 4
+    },
+    {
+      "id": 12,
+      "question": "Lorem ipsum dolor sit cing elit. met, consectetur adipisicing elit. Repellendus optio delectus numquam sint saepe corporis",
+      "answer": [
+        "Lorem ipsum dolor sit , consectetur adipisi epellendus optio delectus",
+        "Lorem ipsum dolo amet, consectetur elit. Repellendus optio delectus",
+        "Lorem ipsum dolor sitonsectetur adipisicing elit. Repellendus optio delectus",
+        "Lorem ipsum dolor sit amet, consecteRepellendus optio delectus"
+      ],
+      "right_answer": 4
+    },
+    {
+      "id": 13,
+      "question": "Lorem ipsum dolor sit amet, consectetur adipisicintio delectus numquam sint saepe corporis.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus optio delectus numquam sint saepe corporis",
+      "answer": [
+        "Lorem ipsum dolor sit , consectetur adipisicing elit optio delectus",
+        "Lorem ipsum dolo amet, consectetur . Repellendus optio delectus",
+        "Lorem ipsum dolor sitonsectetur adipisicing elit. Repellendus optio delectus",
+        "Lorem ipsum dolor sit amet, consecndus optio delectus"
+      ],
+      "right_answer": 4
+    },
+    {
+      "id": 14,
+      "question": "Lorem ipsum dolor, consectetur adipisicing elit. Repellendus optio delectus numquam sint saepe corporis.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus optio delectus numquam sint saepe corporis",
+      "answer": [
+        "Lorem ipsum dolor sit , consectetur adipisicing elit. Repellendus optio delectus",
+        "Lorem ipsum dolo amet, consectetur elit. Repellendus optio delectus",
+        "Lorem ipsum dolor sitonsectetur adRepellendus optio delectus",
+        "Lorem ipsum dolor sit amet, consecteRepellendus optio delectus"
+      ],
+      "right_answer": 4
+    },
+    {
+      "id": 15,
+      "question": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus optio delectus numquam sint saepe corporis.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus optio delectus numquam sint saepe corporis",
+      "answer": [
+        "Lorem ipsum dolor sit , consectetur adipisicing elit. Repellendus optio delectus",
+        "Lorem ipsum dolo amet, consectetur elit. Repellendus optio delectus",
+        "Lorem ipsum dolor sitonsectetur adipisicing elit. Repellendus optio delectus",
+        "Lorem ipsum dolor sit amet, consecteRepellendus optio delectus"
+      ],
+      "right_answer": 4
+    },
+    {
+      "id": 16,
+      "question": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus optio delectus numquam sint saepe corporis.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus optio delectus numquam sint saepe corporis",
+      "answer": [
+        "Lorem ipsum dolor sit , consectetur adipisicing elit. Repellendus optio delectus",
+        "Lorem ipsum dolo amet, consectetur elit. Repellendus optio delectus",
+        "Lorem ipsum dolor sitonsectetur adipisicing elit. Repellendus optio delectus",
+        "Lorem ipsum dolor sit amet, consecteRepellendus optio delectus"
+      ],
+      "right_answer": 4
+    },
+    {
+      "id": 17,
+      "question": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus optio delectus numquam sint saepe corporis.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus optio delectus numquam sint saepe corporis",
+      "answer": [
+        "Lorem ipsum dolor sit , consectetur adipisicing elit. Repellendus optio delectus",
+        "Lorem ipsum dolo amet, consectetur elit. Repellendus optio delectus",
+        "Lorem ipsum dolor sitonsectetur adipisicing elit. Repellendus optio delectus",
+        "Lorem ipsum dolor sit amet, consecteRepellendus optio delectus"
+      ],
+      "right_answer": 4
+    },
+    {
+      "id": 18,
+      "question": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus optio delectus numquam sint saepe corporis.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus optio delectus numquam sint saepe corporis",
+      "answer": [
+        "Lorem ipsum dolor sit , consectetur adipisicing elit. Repellendus optio delectus",
+        "Lorem ipsum dolo amet, consectetur elit. Repellendus optio delectus",
+        "Lorem ipsum dolor sitonsectetur adipisicing elit. Repellendus optio delectus",
+        "Lorem ipsum dolor sit amet, consecteRepellendus optio delectus"
+      ],
+      "right_answer": 4
+    },
+    {
+      "id": 19,
+      "question": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus optio delectus numquam sint saepe corporis.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus optio delectus numquam sint saepe corporis",
+      "answer": [
+        "Lorem ipsum dolor sit , consectetur adipisicing elit. Repellendus optio delectus",
+        "Lorem ipsum dolo amet, consectetur elit. Repellendus optio delectus",
+        "Lorem ipsum dolor sitonsectetur adipisicing elit. Repellendus optio delectus",
+        "Lorem ipsum dolor sit amet, consecteRepellendus optio delectus"
+      ],
+      "right_answer": 4
+    },
+    {
+      "id": 20,
+      "question": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus optio delectus numquam sint saepe corporis.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus optio delectus numquam sint saepe corporis",
+      "answer": [
+        "Lorem ipsum dolor sit , consectetur adipisicing elit. Repellendus optio delectus",
+        "Lorem ipsum dolo amet, consectetur elit. Repellendus optio delectus",
+        "Lorem ipsum dolor sitonsectetur adipisicing elit. Repellendus optio delectus",
+        "Lorem ipsum dolor sit amet, consecteRepellendus optio delectus"
+      ],
+      "right_answer": 4
+    }
+  ]
+}

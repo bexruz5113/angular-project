@@ -1,0 +1,19 @@
+table,
+th {
+    width: 40%;
+    border: 1px solid black;
+
+    td {
+        width: 60%;
+        border: 1px solid black;
+    }
+}
+.icons {
+    width: 100px;
+    margin: 150px auto 40px;
+    display: flex;
+    justify-content: center;
+    .mat-icon {
+        font-size: 80px;
+    }
+}
