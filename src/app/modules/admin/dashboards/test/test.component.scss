@@ -35,17 +35,21 @@ input[type="radio"]:checked + label {
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 .checked {
-    background-color: blue;
     color: white;
-    animation: selected 1.5s forwards;
+    animation: selected 0.5s forwards;
 }
 
 @keyframes selected {
     from {
-        opacity: 0.1;
+        background-color: #fff;
+        color: black;
+        // opacity: 0.1;
     }
     to {
-        opacity: 2;
+        background-color: rgb(23, 23, 26);
+        color: white;
+
+        // opacity: 2;
     }
 }
 .slide {
@@ -107,7 +111,8 @@ input[type="radio"]:checked + label {
 }
 
 .custom-pagination > div.current {
-    border: 2px solid black;
+    border: 2px solid rgb(24, 23, 23);
+    // background-color: black;
     color: black;
     font-weight: lighter;
 }

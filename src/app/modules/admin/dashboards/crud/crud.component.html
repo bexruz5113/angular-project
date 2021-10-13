@@ -11,8 +11,11 @@
     <div>
         <p class="text-xl font-bold ml-5">Length:{{ listUsers.length }}</p>
     </div>
-    <div class="flex justify-between">
-        <div class="w-1/2 mx-5" style="height: 490px; overflow-y: auto">
+    <div class="sm:flex justify-between block space-y-4">
+        <div
+            class="sm:w-1/2 w-4/5 mx-auto mx-5"
+            style="height: 490px; overflow-y: auto"
+        >
             <table class="table" style="width: 100%">
                 <tr>
                     <!-- <th>N_</th> -->
@@ -36,7 +39,7 @@
                 </tr>
             </table>
         </div>
-        <div class="w-1/2 mx-5">
+        <div class="sm:w-1/2 w-4/5 mx-auto mx-5">
             <div
                 class="border-gray-300 border p-3"
                 style="width: 100%; height: 100%"

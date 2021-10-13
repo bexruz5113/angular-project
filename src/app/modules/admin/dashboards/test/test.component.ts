@@ -1,7 +1,6 @@
-import { Component, OnInit, ViewChild, VERSION } from '@angular/core';
+import { Component, OnInit, ViewChild, HostListener } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ApiService } from 'app/share/api.service';
-import { add } from 'lodash';
 import { PaginationInstance } from 'ngx-pagination/dist/pagination-instance';
 import SwiperCore, { Swiper, Navigation, Pagination } from 'swiper';
 import { SwiperComponent } from 'swiper/angular';
@@ -12,14 +11,15 @@ SwiperCore.use([Navigation, Pagination]);
 @Component({
   selector: 'appTest',
   templateUrl: './test.component.html',
-  styleUrls: ['./test.component.scss']
+  styleUrls: ['./test.component.scss'],
+
 }) export class TestComponent implements OnInit {
   @ViewChild('swiper', { static: false }) swiper?: SwiperComponent;
 
 
   collection: any = [];
   page: any;
-  maxSize = 12;
+  maxSize = 8;
 
   public config: PaginationInstance = {
     id: 'advanced',
@@ -35,20 +35,39 @@ SwiperCore.use([Navigation, Pagination]);
   buttonTitle: string = 'Next';
   iconShow: boolean = true;
   backShow: boolean = true;
-  stopTimer: any;
-  time: 0;
-  dt = new Date(new Date().setTime(0));
-  ctime = this.dt.getTime();
-  seconds = Math.floor((this.ctime % (1000 * 60)) / 1000);
-  minuts = Math.floor((this.ctime % (1000 * 60 * 60)) / (1000 * 60));
-  formatedSec: any = '00';
-  formatedMin: any = '00';
+  // stopTimer: any;
+  // time: 0;
+  // dt = new Date(new Date().setTime(0));
+  // ctime = this.dt.getTime();
+  // seconds = Math.floor((this.ctime % (1000 * 60)) / 1000);
+  // minuts = Math.floor((this.ctime % (1000 * 60 * 60)) / (1000 * 60));
+  // formatedSec: any = '00';
+  // formatedMin: any = '00';
   userAnswer: any = [];
   inputCheck: boolean = false;
   questions: any = [];
   listTest: any = [];
+  isComparisonWindow: any;
 
-  constructor(public dialog: MatDialog, private apiService: ApiService) { }
+  constructor(public dialog: MatDialog, private apiService: ApiService) {
+    // eslint-disable-next-line prefer-arrow/prefer-arrow-functions
+    // document.addEventListener('keyup', function(event) {
+    //   if (event.key === 'Enter') {
+    //     alert('done');
+    //   }
+    // });
+  }
+
+  @HostListener('window:keyup', ['$event'])
+  keyEvent(event: KeyboardEvent): void {
+    console.log(event);
+
+    if (event.keyCode === 13) {
+      console.log(this.config);
+      this.config.currentPage += 1;
+      this.next();
+    }
+  }
   // slideNext(): void {
   //   this.swiper.swiperRef.slideNext(100);
   // }
@@ -56,21 +75,22 @@ SwiperCore.use([Navigation, Pagination]);
   //   this.swiper.swiperRef.slidePrev(100);
   // }
   ngOnInit(): void {
-    this.formatedSec = '00';
-    this.formatedMin = '00';
-    this.time = 0;
-    this.timer();
+    // this.formatedSec = '00';
+    // this.formatedMin = '00';
+    // this.time = 0;
+    // this.timer();
     this.apiService.getTests().subscribe((data) => {
       this.listTest = data;
       console.log(data);
       this.slideShow(data[0].id);
     });
-
-    console.log(this.page);
-
-
   }
 
+
+
+  submitBtn(): void {
+    this.config.currentPage += 1;
+  }
 
   slideShow(id): void {
     this.apiService.getTest(id).subscribe((data) => {
@@ -94,26 +114,28 @@ SwiperCore.use([Navigation, Pagination]);
 
   toggleClass(item: number, quesNumber: number): void {
     this.userAnswer.push({ question: quesNumber, selected: item });
-    document.getElementById('config.id').classList.add('checked');
+    console.log(this.userAnswer);
+    document.getElementById(`addStyle${quesNumber}`).classList.add('checked');
 
     // console.log(this.userAnswer);
   }
 
-  timer(): void {
-    this.stopTimer = setInterval(() => {
-      this.time++;
-      if (this.seconds < 59) {
-        this.seconds++;
-      } else {
-        this.seconds = 0;
-        this.minuts++;
-      }
-      this.formatedSec = this.seconds < 10 ? `0${this.seconds}` : `${this.seconds}`;
-      this.formatedMin = this.minuts < 10 ? `0${this.minuts}` : `${this.minuts}`;
-    }, 1000);
-  }
+  // timer(): void {
+  //   this.stopTimer = setInterval(() => {
+  //     this.time++;
+  //     if (this.seconds < 59) {
+  //       this.seconds++;
+  //     } else {
+  //       this.seconds = 0;
+  //       this.minuts++;
+  //     }
+  //     this.formatedSec = this.seconds < 10 ? `0${this.seconds}` : `${this.seconds}`;
+  //     this.formatedMin = this.minuts < 10 ? `0${this.minuts}` : `${this.minuts}`;
+  //   }, 1000);
+  // }
 
   next(): void {
+    console.log('xaxaxaxa');
     this.swiper.swiperRef.slideNext();
 
     if (this.questions.id === this.listTest.length - 1) {
@@ -124,6 +146,7 @@ SwiperCore.use([Navigation, Pagination]);
     this.questions = this.listTest[index];
 
   }
+
 }
 
 // eslint-disable-next-line @typescript-eslint/naming-convention
@@ -131,3 +154,7 @@ export interface bodyQuestion {
   question: number;
   selected: number;
 };
+export interface Point {
+  x: number;
+  y: number;
+}

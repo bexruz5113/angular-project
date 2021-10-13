@@ -1,11 +1,11 @@
 /* eslint-disable eqeqeq */
-import { Component, DoCheck, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, DoCheck, Input, OnInit, ViewChild, HostListener } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ApiService } from 'app/share/api.service';
 import { ListComponent } from './list/list.component';
-
-
-
+import SwiperCore, { Swiper, Navigation, Pagination } from 'swiper';
+import { SwiperComponent } from 'swiper/angular';
+SwiperCore.use([Navigation, Pagination]);
 
 @Component({
   selector: 'prop',
@@ -13,11 +13,10 @@ import { ListComponent } from './list/list.component';
   styleUrls: ['./prop.component.scss'],
 })
 export class PropComponent implements OnInit, DoCheck {
+  @ViewChild('swiper', { static: false }) swiper?: SwiperComponent;
+
 
   counter = 0;
-
-
-
   checked = false;
   disabled = false;
   questionCount: number = 0;
@@ -46,7 +45,15 @@ export class PropComponent implements OnInit, DoCheck {
   // disable: boolean;
   // slideIndex: number = 1;
   constructor(public dialog: MatDialog, private apiService: ApiService) { }
+  @HostListener('window:keyup', ['$event'])
+  keyEvent(event: KeyboardEvent): void {
+    console.log(event);
 
+    if (event.keyCode === 13) {
+      this.next();
+
+    }
+  }
   ngOnInit(): void {
     this.formatedSec = '00';
     this.formatedMin = '00';
@@ -66,12 +73,6 @@ export class PropComponent implements OnInit, DoCheck {
     // this.isNextButtonDisabled();
     // console.log('selected' + this.selected);
   }
-
-
-
-
-
-
 
   openDialog(): void {
     const dialogRef = this.dialog.open(ListComponent);
@@ -113,20 +114,17 @@ export class PropComponent implements OnInit, DoCheck {
     // this.disable = (this.questions.id == 1);
   }
 
-  toggleClass(item: number, quesNumber: number): void {
-    this.userAnswer.push({ question: quesNumber, selected: item });
-    document.getElementById(`addStyle${quesNumber}`).classList.add('checked');
-    const quiz = {
-      question: quesNumber,
-      selected: item,
-    };
-
-    window.localStorage.setItem(`quiz${quesNumber}`, JSON.stringify(quiz));
-    console.log(quiz);
-
-    window.localStorage.getItem('quizSelected');
-
+  toggleClass(value: string, quesNumber: number): void {
+    this.userAnswer.push({ question: quesNumber, value: value });
     console.log(this.userAnswer);
+    document.getElementById(`addStyle${quesNumber}`).classList.add('checked');
+    // document.getElementById(`addStyle${quesNumber}`).classList.add('checked');
+    // const quiz = {
+    //   question: quesNumber,
+    //   selected: item,
+    // };
+
+
 
     // const body: bodyQuestion = {
     //   question: quesNumber,
@@ -155,7 +153,6 @@ export class PropComponent implements OnInit, DoCheck {
     // console.log('item => ' + item);
   }
 
-
   timer(): void {
     this.stopTimer = setInterval(() => {
       this.time++;
@@ -170,6 +167,7 @@ export class PropComponent implements OnInit, DoCheck {
     }, 1000);
   }
   back(): void {
+
     if (this.questions[0]) {
       this.backShow = false;
     }

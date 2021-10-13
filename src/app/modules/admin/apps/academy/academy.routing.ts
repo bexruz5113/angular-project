@@ -6,24 +6,24 @@ import { AcademyCategoriesResolver, AcademyCourseResolver, AcademyCoursesResolve
 
 export const academyRoutes: Route[] = [
     {
-        path     : '',
+        path: '',
         component: AcademyComponent,
-        resolve  : {
+        resolve: {
             categories: AcademyCategoriesResolver
         },
-        children : [
+        children: [
             {
-                path     : '',
-                pathMatch: 'full',
+                path: '',
+                pathMatch: '',
                 component: AcademyListComponent,
-                resolve  : {
+                resolve: {
                     courses: AcademyCoursesResolver
                 }
             },
             {
-                path     : ':id',
+                path: ':id',
                 component: AcademyDetailsComponent,
-                resolve  : {
+                resolve: {
                     course: AcademyCourseResolver
                 }
             }

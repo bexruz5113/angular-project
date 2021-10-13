@@ -10,6 +10,12 @@ import { TestComponent } from './test.component';
 import { testRoutes } from './test.routing';
 import { SwiperModule } from 'swiper/angular';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { CountdownModule } from 'ngx-countdown';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { ClipboardModule } from '@angular/cdk/clipboard';
+
 
 @NgModule({
   declarations: [
@@ -22,9 +28,15 @@ import { NgxPaginationModule } from 'ngx-pagination';
     FormsModule,
     MatDialogModule,
     MatRadioModule,
+    MatCheckboxModule,
     MatListModule,
     SwiperModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    MatProgressSpinnerModule,
+    CountdownModule,
+    MatFormFieldModule,
+    ClipboardModule
+
   ],
 
 }) export class TestModule { }

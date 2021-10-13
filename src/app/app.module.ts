@@ -35,25 +35,20 @@ const routerConfig: ExtraOptions = {
         BrowserModule,
         BrowserAnimationsModule,
         RouterModule.forRoot(appRoutes, routerConfig),
-        // Fuse, FuseConfig & FuseMockAPI
         FuseModule,
         FuseConfigModule.forRoot(appConfig),
         FuseMockApiModule.forRoot(mockApiServices),
 
-        // Core module of your application
         CoreModule,
 
-        // Layout module of your application
         LayoutModule,
         CommonModule,
         FormsModule,
         SwiperModule,
-        // share
         HttpClientModule,
         ReactiveFormsModule,
         MatSnackBarModule,
         NgxPaginationModule,
-        // 3rd party modules that require global configuration via forRoot
         MarkdownModule.forRoot({})
     ],
     providers: [],

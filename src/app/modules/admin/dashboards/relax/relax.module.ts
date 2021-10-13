@@ -5,18 +5,22 @@ import { EnjoyModule } from './enjoy/enjoy.module';
 import { RelaxComponent } from './relax.component';
 import { relaxRoutes } from './relax.routing';
 import { MatButtonModule } from '@angular/material/button';
+import { FormsModule } from '@angular/forms';
+import { ClipboardModule } from '@angular/cdk/clipboard';
 
 @NgModule({
-  declarations:[
+  declarations: [
     RelaxComponent,
   ],
-  imports     : [
+  imports: [
     RouterModule.forChild(relaxRoutes),
     EnjoyModule,
     CommonModule,
-    MatButtonModule
+    MatButtonModule,
+    FormsModule,
+    ClipboardModule
   ]
 })
-export class RelaxModule{
+export class RelaxModule {
 
 }

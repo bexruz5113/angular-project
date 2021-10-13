@@ -11,6 +11,8 @@ import { propRoutes } from './prop.routing';
 import { MatListModule } from '@angular/material/list';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ListModule } from './list/list.module';
+import { SwiperModule } from 'swiper/angular';
+import { CountdownModule } from 'ngx-countdown';
 
 
 
@@ -30,6 +32,9 @@ import { ListModule } from './list/list.module';
     MatRadioModule,
     MatListModule,
     ListModule,
+    SwiperModule,
+    CountdownModule
+
 
 
 

@@ -1,3 +1,7 @@
+@import "swiper/scss";
+@import "swiper/scss/navigation";
+@import "swiper/scss/pagination";
+
 input[type="radio"] + label span {
     transition: 0.2s, transform 0.2s;
 }
@@ -24,8 +28,8 @@ input[type="radio"]:checked + label {
     background: lightgrey;
     color: black;
 }
-.checked:focus {
-    background-color: rgb(53, 125, 240);
+.checked {
+    background-color: #1e293b;
     color: white;
     animation: selected 1.5s forwards;
 }

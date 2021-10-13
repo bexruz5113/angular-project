@@ -1,5 +1,5 @@
-<div class="w-full">
-    <div class="block xl:w-1/2 w-4/5 mx-auto">
+<div class="w-full static">
+    <div class="block xl:w-2/3 w-4/5 mx-auto">
         <div class="w-full py-4">
             <div class="rounded h-2/3 mx-2 p-3">
                 <div class="flex justify-between">
@@ -10,7 +10,12 @@
                         </b>
                     </div>
                     <div>
-                        <b>{{ formatedMin }}:{{ formatedSec }} / 25:00</b>
+                        <b>
+                            <countdown
+                                [config]="{ leftTime: 1500, format: 'm:s' }"
+                            ></countdown>
+                        </b>
+                        <!-- <b>{{ formatedMin }}:{{ formatedSec }}</b> -->
                     </div>
                 </div>
                 <hr class="my-3" />
@@ -18,8 +23,11 @@
                 <ng-template #sniper>
                     <mat-spinner></mat-spinner>
                 </ng-template>
-                <div class="w-full" *ngIf="questions; sniper">
-                    <swiper
+                <div
+                    class="xl:w-4/5 w-full mx-auto"
+                    *ngIf="questions; else sniper"
+                >
+                    <!-- <swiper
                         [slidesPerView]="1"
                         [spaceBetween]="100"
                         [navigation]="false"
@@ -31,13 +39,20 @@
                         <ng-template
                             swiperSlide
                             let-data
-                            class="py-4 px-1"
+                            class="py-4 px-1 mx-auto"
                             *ngFor="
-                                let questions of listTest | paginate: config
+                                let questions of listTest | paginate: config;
+                                let i = index
                             "
                         >
                             <div
-                                class="space-y-8 slide overflow-auto h-72"
+                                class="
+                                    space-y-8
+                                    slide
+                                    overflow-auto
+                                    xl:h-96
+                                    h-80
+                                "
                                 *ngIf="questions"
                             >
                                 <b
@@ -72,126 +87,147 @@
                                                 text-xl
                                             "
                                         >
-                                            <mat-radio-button
-                                                class="ml-3 mr-1"
-                                                type="radio"
-                                                [id]="ques"
-                                                name="category"
-                                                [value]="ques"
-                                                (change)="
-                                                    toggleClass(i, questions.id)
+                                            <ng-template #matCheckbox>
+                                                <mat-checkbox
+                                                    [id]="ques"
+                                                    class="ml-3"
+                                                    (change)="
+                                                        toggleClass(
+                                                            i,
+                                                            questions.id
+                                                        )
+                                                    "
+                                                >
+                                                    {{ ques }}
+                                                </mat-checkbox>
+                                            </ng-template>
+
+                                            <div
+                                                *ngIf="
+                                                    questions.type === 'radio';
+                                                    else matCheckbox
                                                 "
-                                                [checked]="inputCheck"
-                                                color="accent"
                                             >
-                                            </mat-radio-button>
-                                            {{ ques }}
-                                        </label>
+                                                <mat-radio-button
+                                                    class="ml-3"
+                                                    [id]="ques"
+                                                    (change)="
+                                                        toggleClass(
+                                                            i,
+                                                            questions.id
+                                                        )
+                                                    "
+                                                >
+                                                    {{ ques }}
+                                                </mat-radio-button>
+                                            </div>
+
+                                            </label>
                                     </div>
                                 </mat-selection-list>
                             </div>
                         </ng-template>
-                    </swiper>
-                </div>
-                <!-- <div   
-                    class="space-y-8 slide overflow-auto h-72"
-                    *ngIf="questions"
-                >
-                    <b
-                        style="font-family: sans-serif"
-                        class="
-                            py-5
-                            text-2xl
-                            font-black
-                            text-gray-800
-                            font-medium
-                            text
-                        "
-                    >
-                        {{ questions.question }}
-                    </b>
-                    <br />
+                    </swiper> -->
 
-                    <mat-selection-list class="space-y-6" #shoes>
-                        <div
-                            *ngFor="let ques of questions.answer; let i = index"
-                        >
-                            <label
-                                style="font-family: sans-serif"
-                                class="inline-flex items-center text-xl"
-                            >
-                                <mat-radio-button
-                                    class="ml-3 mr-1"
-                                    type="radio"
-                                    [id]="ques"
-                                    name="category"
-                                    [value]="ques"
-                                    (change)="toggleClass(i, questions.id)"
-                                    [checked]="inputCheck"
-                                    color="primary"
-                                >
-                                </mat-radio-button>
-                                {{ ques }}
-                            </label>
-                        </div>
-                    </mat-selection-list>
-                </div> -->
-            </div>
-            <br />
-            <!-- <div class="flex items-center justify-center mx-6 mt-2">
-                <div class="mx-2">
-                    <button
-                        (click)="next()"
-                        class="
-                            flex
-                            items-center
-                            justify-center
-                            bg-gray-700
-                            dark:bg-white dark:text-black
-                            hover:bg-gray-800
-                            text-white text-lg
-                            rounded
-                            py-1
-                            px-4
+                    <div
+                        class="py-4 px-1 mx-auto"
+                        *ngFor="
+                            let questions of listTest | paginate: config;
+                            let i = index
                         "
                     >
-                        <p class="ml-2">{{ buttonTitle }}</p>
-                        <mat-icon
-                            *ngIf="iconShow"
-                            class="text-white dark:text-black"
-                            >keyboard_arrow_right</mat-icon
+                        <div
+                            class="space-y-8 slide overflow-auto xl:h-96 h-80"
+                            *ngIf="questions"
                         >
+                            <b
+                                style="font-family: sans-serif"
+                                class="
+                                    py-5
+                                    text-2xl
+                                    font-black
+                                    text-gray-800
+                                    dark:text-white
+                                    font-medium
+                                    text
+                                "
+                            >
+                                {{ questions.id }}.
+                                {{ questions.question }}
+                            </b>
+                            <br />
+
+                            <mat-selection-list class="space-y-6" #shoes>
+                                <div
+                                    *ngFor="
+                                        let ques of questions.answer;
+                                        let i = index
+                                    "
+                                >
+                                    <label
+                                        style="font-family: sans-serif"
+                                        class="inline-flex items-center text-xl"
+                                    >
+                                        <ng-template #matCheckbox>
+                                            <mat-checkbox
+                                                [id]="ques"
+                                                class="ml-3"
+                                                (change)="
+                                                    toggleClass(i, questions.id)
+                                                "
+                                            >
+                                                {{ ques }}
+                                            </mat-checkbox>
+                                        </ng-template>
+
+                                        <div
+                                            *ngIf="
+                                                questions.type === 'radio';
+                                                else matCheckbox
+                                            "
+                                        >
+                                            <mat-radio-button
+                                                class="ml-3"
+                                                [id]="ques"
+                                                (change)="
+                                                    toggleClass(i, questions.id)
+                                                "
+                                            >
+                                                {{ ques }}
+                                            </mat-radio-button>
+                                        </div>
+                                    </label>
+                                </div>
+                            </mat-selection-list>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-center">
+                    <button
+                        (click)="submitBtn()"
+                        class="
+                            bg-gray-800
+                            hover:bg-gray-900
+                            text-white
+                            py-1
+                            px-5
+                            rounded
+                        "
+                    >
+                        Submit
                     </button>
                 </div>
-            </div> -->
+            </div>
+            <br />
         </div>
     </div>
     <div>
-        <div class="xl:w-1/2 w-4/5 mx-auto px-1 my-5 py-4">
+        <div
+            class="xl:w-1/2 w-4/5 mx-auto px-1 mt-7 py-4 absolute"
+            style="bottom: 0; left: 50%; transform: translate(-50%)"
+        >
             <div>
                 <ul class="flex justify-center">
-                    <!-- <li>
-                        <button
-                            (click)="next()"
-                            class="
-                                flex
-                                items-center
-                                justify-center
-                                bg-gray-700
-                                dark:bg-white dark:text-black
-                                hover:bg-gray-800
-                                text-white text-md
-                                clickBtn
-                            "
-                        >
-                            <mat-icon
-                                *ngIf="iconShow"
-                                class="text-white dark:text-black text-lg"
-                                >keyboard_arrow_left</mat-icon
-                            >
-                        </button>
-                    </li> -->
-
                     <li>
                         <pagination-template
                             #p="paginationApi"
@@ -201,17 +237,17 @@
                             <div class="custom-pagination">
                                 <div
                                     class="paginator-nav-btns"
-                                    *ngIf="!p.isFirstPage()"
                                     [class.disabled]="p.isFirstPage()"
                                 >
                                     <a (click)="p.previous()"> Back</a>
                                 </div>
 
                                 <div
-                                    *ngFor="let page of p.pages"
+                                    *ngFor="let page of p.pages; let i = index"
                                     [class.current]="
                                         p.getCurrent() === page.value
                                     "
+                                    id="addStyle{{ page.label }}"
                                 >
                                     <a
                                         (click)="p.setCurrent(page.value)"
@@ -226,7 +262,6 @@
 
                                 <div
                                     class="paginator-nav-btns"
-                                    *ngIf="!p.isLastPage()"
                                     [class.disabled]="p.isLastPage()"
                                 >
                                     <a (click)="p.next()"> Next</a>
@@ -234,145 +269,8 @@
                             </div>
                         </pagination-template>
                     </li>
-                    <!-- <li>
-                        <pagination-controls
-                            maxSize="15"
-                            directionLinks="true"
-                            autoHide="true"
-                            previousLabel=""
-                            nextLabel=""
-                            (pageChange)="page = $event"
-                        ></pagination-controls> -->
-                    <!-- <button
-                            *ngFor="let test of listTest"
-                            class="clickBtn"
-                            (click)="slideShow(test.id)"
-                            id="addStyle{{ test.id }}"
-                        >
-                            {{ test.id }}
-                        </button> -->
-
-                    <!-- <li>
-                        <button
-                            (click)="next()"
-                            class="
-                                flex
-                                items-center
-                                justify-center
-                                bg-gray-700
-                                dark:bg-white dark:text-black
-                                hover:bg-gray-800
-                                text-white text-md
-                                clickBtn
-                            "
-                        >
-                            <mat-icon
-                                *ngIf="iconShow"
-                                class="text-white dark:text-black text-lg"
-                                >keyboard_arrow_right</mat-icon
-                            >
-                        </button>
-                    </li> -->
                 </ul>
             </div>
         </div>
     </div>
-    <!-- <div class="w-1/2 mx-auto border my-16 p-5">
-        <ul class="list-group">
-            <li
-                class="list-group-item my-10"
-                *ngFor="
-                    let item of listTest
-                        | paginate: { itemsPerPage: 1, currentPage: page }
-                "
-            >
-                {{ item.id }}) {{ item.question }}
-            </li>
-        </ul>
-
-        <pagination-controls (pageChange)="page = $event"></pagination-controls>
-    </div> -->
-    <!-- <div class="w-1/2 mx-auto my-10">
-        <button
-            class="p-5 bg-red-600 text-white"
-            type="button"
-            (keydown)="onKeydown($event)"
-            (click)="checkEnter()"
-        >
-            enter check
-        </button>
-    </div> -->
-    <!-- <div class="w-11/12 mx-auto my-5">
-        <swiper
-            class="py-10 border border-black"
-            [slidesPerView]="1"
-            [spaceBetween]="100"
-            [navigation]="false"
-            [speed]="400"
-            [scrollbar]="{ draggable: true }"
-            #swiper
-        >
-            <ng-template
-                swiperSlide
-                class="border border-black"
-                *ngFor="let questions of listTest"
-            >
-                <div
-                    class="space-y-8 slide overflow-auto h-72"
-                    *ngIf="questions"
-                >
-                    <b
-                        style="font-family: sans-serif"
-                        class="
-                            py-5
-                            text-2xl
-                            font-black
-                            text-gray-800
-                            font-medium
-                            text
-                        "
-                    >
-                        {{ questions.id }} {{ questions.question }}
-                    </b>
-                    <br />
-
-                    <mat-selection-list class="space-y-6" #shoes>
-                        <div
-                            *ngFor="let ques of questions.answer; let i = index"
-                        >
-                            <label
-                                style="font-family: sans-serif"
-                                class="inline-flex items-center text-xl"
-                            >
-                                <mat-radio-button
-                                    class="ml-3 mr-1"
-                                    type="radio"
-                                    [id]="ques"
-                                    name="category"
-                                    [value]="ques"
-                                    (change)="toggleClass(i, questions.id)"
-                                    [checked]="inputCheck"
-                                    color="primary"
-                                >
-                                </mat-radio-button>
-                                {{ ques }}
-                            </label>
-                        </div>
-                    </mat-selection-list>
-                </div>
-            </ng-template>
-        </swiper>
-        <button
-            class="bg-blue-600 text-white border rounded mx-4 px-3 py-1"
-            (click)="slidePrev()"
-        >
-            Prev slide
-        </button>
-        <button
-            class="bg-blue-600 text-white border rounded mx-4 px-3 py-1"
-            (click)="slideNext()"
-        >
-            Next slide
-        </button>
-    </div> -->
 </div>
