@@ -19,6 +19,8 @@ export class CrudComponent implements OnInit {
 
   constructor(public dialog: MatDialog, private apiService: ApiService) {
     console.log('called constructor');
+    console.log('xaxaxaa');
+
   }
 
   ngOnInit(): void {
