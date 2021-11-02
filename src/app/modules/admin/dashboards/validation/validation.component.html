@@ -1,0 +1,68 @@
+<div class="p-5 bg-blue-100 text-black w-full">
+    <form #form="ngForm" (ngSubmit)="formSend()">
+        <div class="w-full">
+            <label for="name">Name </label><br />
+            <input
+                [(ngModel)]="obj.name"
+                name="name"
+                class="bg-white border border-gray-400 w-full p-2 rounded"
+                type="text"
+                id="name"
+                #name="ngModel"
+                required
+            />
+            <div class="text-red-700" *ngIf="name.touched && !name.valid">
+                Ismni kiritish majburiy.
+            </div>
+        </div>
+        <br />
+        <div class="w-full">
+            <label for="email">Email </label><br />
+            <input
+                [(ngModel)]="obj.email"
+                name="email"
+                class="bg-white border border-gray-400 w-full p-2 rounded"
+                type="email"
+                id="email"
+                required
+                #email="ngModel"
+            />
+            <div class="text-red-700" *ngIf="email.touched && !email.valid">
+                Emailni kiritish majburiy.
+            </div>
+        </div>
+        <br />
+
+        <div class="w-full">
+            <label for="name">Message </label><br />
+            <textarea
+                [(ngModel)]="obj.message"
+                name="message"
+                class="bg-white border border-gray-400 w-full p-2 rounded"
+                type="text"
+                id="name"
+                required
+                #message="ngModel"
+            ></textarea>
+            <div class="text-red-700" *ngIf="message.touched && !message.valid">
+                Text kiritish majburiy.
+            </div>
+        </div>
+        <div class="w-1/5 mt-4">
+            <button
+                class="
+                    w-full
+                    px-4
+                    py-2
+                    rounded
+                    bg-red-800
+                    text-white
+                    font-inherit
+                "
+            >
+                Submit
+            </button>
+        </div>
+    </form>
+    <p>{{ form.value | json }}</p>
+</div>

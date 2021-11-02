@@ -13,8 +13,8 @@
     </div>
     <div class="sm:flex justify-between block space-y-4">
         <div
-            class="sm:w-1/2 w-4/5 mx-auto mx-5"
-            style="height: 490px; overflow-y: auto"
+            class="max-w-6xl h-full shadow bg-card mx-auto mx-5"
+            style="overflow-y: auto"
         >
             <table class="table" style="width: 100%">
                 <tr>
@@ -31,6 +31,12 @@
                         <b class="bg-yellow-100 px-1">{{ user.id }}</b> | Vaqti:
                         <b class="bg-red-200 px-1">{{ user.date }}</b>
                         <p class="flex items-center p-1">
+                            <!-- <mat-icon
+                                aria-hidden="false"
+                                aria-label="Example home icon"
+                                >home</mat-icon>
+                            -->
+
                             <mat-icon>account_circle</mat-icon>
                             Mijoz:
                             <b>{{ user.name }}</b>

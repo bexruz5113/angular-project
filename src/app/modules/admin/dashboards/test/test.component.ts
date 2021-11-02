@@ -63,9 +63,10 @@ SwiperCore.use([Navigation, Pagination]);
     console.log(event);
 
     if (event.keyCode === 13) {
-      console.log(this.config);
+      // console.log(this.config);
       this.config.currentPage += 1;
       this.next();
+
     }
   }
   // slideNext(): void {
@@ -136,7 +137,7 @@ SwiperCore.use([Navigation, Pagination]);
 
   next(): void {
     console.log('xaxaxaxa');
-    this.swiper.swiperRef.slideNext();
+    // this.swiper.swiperRef.slideNext();
 
     if (this.questions.id === this.listTest.length - 1) {
       this.buttonTitle = 'Finish';

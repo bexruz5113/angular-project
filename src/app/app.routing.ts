@@ -164,6 +164,10 @@ export const appRoutes: Route[] = [
                     {
                         path: 'test', loadChildren: () => import('app/modules/admin/dashboards/test/test.module')
                             .then(m => m.TestModule)
+                    },
+                    {
+                        path: 'validation', loadChildren: () => import('app/modules/admin/dashboards/validation/validation.module')
+                            .then(m => m.ValidationModule)
                     }
                 ],
             },

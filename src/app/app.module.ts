@@ -38,9 +38,7 @@ const routerConfig: ExtraOptions = {
         FuseModule,
         FuseConfigModule.forRoot(appConfig),
         FuseMockApiModule.forRoot(mockApiServices),
-
         CoreModule,
-
         LayoutModule,
         CommonModule,
         FormsModule,

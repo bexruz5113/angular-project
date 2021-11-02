@@ -23,19 +23,19 @@ export class ApiService {
   };
 
   // all get
-  getUsers(): Observable<Share> {
+  public getUsers(): Observable<Share> {
     return this.http.get<Share>(this.apiURL + '/posts')
       .pipe(retry(1),
         catchError(this.handleError)
       );
   }
-  getTests(): Observable<any> {
+  public getTests(): Observable<any> {
     return this.http.get<any>(this.apiURL + '/question')
       .pipe(retry(1),
         catchError(this.handleError)
       );
   }
-  getTest(id): Observable<any> {
+  public getTest(id): Observable<any> {
     return this.http.get<any>(this.apiURL + '/question/' + id)
       .pipe(retry(1),
         catchError(this.handleError)
@@ -43,7 +43,7 @@ export class ApiService {
   }
 
   // id get
-  getUser(id): Observable<Share> {
+  public getUser(id): Observable<Share> {
     return this.http.get<Share>(this.apiURL + '/posts/' + id)
       .pipe(
         retry(1),
@@ -52,7 +52,7 @@ export class ApiService {
   }
 
   // post request
-  createUser(user): Observable<Share> {
+  public createUser(user): Observable<Share> {
     return this.http.post<Share>(this.apiURL + '/posts', JSON.stringify(user), this.httpOptions)
       .pipe(
         retry(1),
@@ -61,7 +61,7 @@ export class ApiService {
   }
 
   // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-  deleteUser(id) {
+  public deleteUser(id) {
     return this.http.delete<Share>(this.apiURL + '/posts/' + id, this.httpOptions)
       .pipe(
         retry(1),
@@ -70,7 +70,7 @@ export class ApiService {
   }
 
   // HttpClient API put() method => Update employee
-  updateUser(id, user): Observable<Share> {
+  public updateUser(id, user): Observable<Share> {
     return this.http.put<Share>(this.apiURL + '/posts/' +
       id, JSON.stringify(user), this.httpOptions)
       .pipe(
@@ -80,7 +80,7 @@ export class ApiService {
   }
 
   // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-  handleError(error) {
+  public handleError(error) {
     let errorMessage = '';
     if (error.error instanceof ErrorEvent) {
       // Get client-side error

@@ -36,7 +36,6 @@ import { ClipboardModule } from '@angular/cdk/clipboard';
     CountdownModule,
     MatFormFieldModule,
     ClipboardModule
-
   ],
 
 }) export class TestModule { }

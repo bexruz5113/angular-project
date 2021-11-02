@@ -41,7 +41,7 @@ export const defaultNavigation: FuseNavigationItem[] = [
                 id: 'dashboards.prop',
                 title: 'Test',
                 type: 'basic',
-                icon: 'heroicons_outline:user',
+                icon: 'heroicons_outline:user-group',
                 link: '/dashboards/prop'
             },
             {
@@ -50,6 +50,13 @@ export const defaultNavigation: FuseNavigationItem[] = [
                 type: 'basic',
                 icon: 'heroicons_outline:user',
                 link: '/dashboards/test'
+            },
+            {
+                id: 'dashboards.validation',
+                title: 'Validation',
+                type: 'basic',
+                icon: 'heroicons_outline:academic-cap',
+                link: '/dashboards/validation'
             }
         ]
     },
